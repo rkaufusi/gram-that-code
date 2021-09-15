@@ -1,11 +1,12 @@
 import './App.css';
-import Font from './Font.js';
+import Buttons from './Buttons/Buttons';
+
 
 function App() {
   return (
     <div className="App">
       <h1>Gram that Code!</h1>
-      <Font />
+      <Buttons/>
     </div>
   );
 }
