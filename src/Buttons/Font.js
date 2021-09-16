@@ -30,6 +30,9 @@ const Font = () => {
         // these buttons and functionality will be put into other componenets
         <div>
           <p>{font}</p>
+          <button className=' dropdown-content' >
+          Language
+        </button>
           <button className=' dropdown-content' onClick={onClick}>
             Font
           </button>
@@ -42,25 +45,22 @@ const Font = () => {
           <button className=' dropdown-content' >
             Color
           </button>
-          {open && fontChoices.map((val, i) => {
-            return ( 
+          {open && 
                <div>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
+                 <button className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
                    Monaco
                   </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
+                 <button className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
                     Menlo
                  </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
+                 <button className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
                     Consolas
                  </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
+                 <button className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
                    Droid Sans Mono
                  </button>
-               </div>
-                
-            )
-            })} 
+               </div>      
+            }
 
 
    
