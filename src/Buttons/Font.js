@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Language from './Language';
 
 const Font = () => {
     const fontChoices = ['Monaco'];
@@ -8,7 +9,7 @@ const Font = () => {
     const onClick = () => {
         setOpen(!open);    
     }
-//
+
     const fontChange = (val) => {
         setFont('Consolas');
         console.log(val)
@@ -24,27 +25,15 @@ const Font = () => {
         
     }
 
-    console.log(open);
-
     return (
-        // these buttons and functionality will be put into other componenets
-        <div>
+      <div>
+        <div className='line'>
           <p>{font}</p>
-          <button className=' dropdown-content' >
-          Language
-        </button>
-          <button className=' dropdown-content' onClick={onClick}>
+
+          <button className='dropdown-content' onClick={onClick}>
             Font
           </button>
-          <button className=' dropdown-content' >
-            Download
-          </button>
-          <button className=' dropdown-content' >
-            Style
-          </button>
-          <button className=' dropdown-content' >
-            Color
-          </button>
+          </div>
           {open && 
                <div>
                  <button className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
@@ -63,32 +52,9 @@ const Font = () => {
             }
 
 
-   
+            
         </div>
     )
 }
 
 export default Font
-
-/*      
-          {open && fontChoices.map((val, i) => {
-            return ( 
-               <div>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
-                   Monaco
-                  </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
-                    Menlo
-                 </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
-                    Consolas
-                 </button>
-                 <button key={i} className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
-                   Droid Sans Mono
-                 </button>
-               </div>
-                
-            )
-            })} 
-
-*/
