@@ -4,6 +4,7 @@ import Language from './Language.js'
 import Download from './Download.js'
 import Style from './Style.js'
 import Color from './Color.js'
+import { Dropdown } from 'semantic-ui-react'
 
 
 const Buttons = () => {

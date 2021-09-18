@@ -12,23 +12,6 @@ const Style = () => {
           <button className=' dropdown-content' onClick={onClick}>
             Style
           </button>
-
-          {open && 
-            <div>
-              <button className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
-                Monaco
-               </button>
-              <button className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
-                 Menlo
-              </button>
-              <button className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
-                 Consolas
-              </button>
-              <button className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
-                Droid Sans Mono
-              </button>
-            </div>      
-         }
         </div>
     )
 }
