@@ -38,3 +38,12 @@
 .line {
   display: inline;
 }
+.work-area {
+    width: 60%;
+    height: 60%;
+    border: 2px solid rgb(13, 17, 13);
+    padding: 50px;
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+}

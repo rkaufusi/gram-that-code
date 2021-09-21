@@ -1,27 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
+import ColorArray from '../ColorArray.js';
 //import Dropdown from 'react-dropdown';
-import { Dropdown } from 'semantic-ui-react'
+//import { Dropdown } from 'semantic-ui-react'
 
 const Color = () => {
-  const DropdownExampleSearchSelection = () => (
-    <Dropdown
-      placeholder='Select Country'
-      fluid
-      search
-      selection
-      options={countryOptions}
-    />
-  )
+  const [firstColor, setFirstColor] = useState();
+  const [secondColor, setSecondColor] = useState();
+
+ //console.log(ColorArray[0]);
+
+  const searchColors = () => {
+    ColorArray.map((val) => {
+      console.log(val);
+    })
+  }
+  searchColors();
+
     return (
-        <div >
-        <Dropdown
-        placeholder='Select Country'
-        fluid
-        search
-        selection
-        options={countryOptions}
-      />
-        </div> 
+      <div className='line'>
+      <button className=' dropdown-content'>
+        Color
+      </button>
+    </div>
     )
 }
 
