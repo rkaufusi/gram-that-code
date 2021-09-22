@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ColorArray = () => [
+const ColorArray  = [
   {
     color: 'red',
     rgb: '#FF0000'

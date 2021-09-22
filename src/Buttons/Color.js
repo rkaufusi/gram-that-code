@@ -4,23 +4,49 @@ import ColorArray from '../ColorArray.js';
 //import { Dropdown } from 'semantic-ui-react'
 
 const Color = () => {
+  let value = 0;
   const [firstColor, setFirstColor] = useState();
   const [secondColor, setSecondColor] = useState();
+  const [userColor, setUserColor] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [count, setCount] = useState(value);
+ 
 
- //console.log(ColorArray[0]);
-
-  const searchColors = () => {
-    ColorArray.map((val) => {
-      console.log(val);
-    })
+  const onClick = () => {
+    setOpen(!open);    
   }
-  searchColors();
+
+  const selectUserColor = (color) => {
+    
+    if(userColor.length < 2){
+      setUserColor([...userColor , color]);
+    }
+    else {
+      let temp = userColor[1];
+      setUserColor([temp, color]);
+    }
+    
+  }
 
     return (
+      <div>
       <div className='line'>
-      <button className=' dropdown-content'>
+      <button className='dropdown-content' onClick={onClick}>
         Color
       </button>
+      </div>
+
+      {open && 
+        <div>
+          <button className='dropdown dropdown-content' onClick={() => selectUserColor('Red')}>
+            Red
+           </button>
+          <button className='dropdown dropdown-content' onClick={() => selectUserColor('Blue')}>
+             Blue
+          </button>
+
+        </div>      
+     }
     </div>
     )
 }
