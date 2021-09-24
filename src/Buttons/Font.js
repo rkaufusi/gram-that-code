@@ -24,6 +24,24 @@ const Font = () => {
     const dropDown = () => {
         
     }
+    function DropDownPortion() {
+      return (
+        <div>
+        <button className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
+          Monaco
+         </button>
+        <button className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
+           Menlo
+        </button>
+        <button className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
+           Consolas
+        </button>
+        <button className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
+          Droid Sans Mono
+        </button>
+      </div>  
+      )
+    }
 
     return (
       <div>
@@ -34,25 +52,8 @@ const Font = () => {
             Font
           </button>
           </div>
-          {open && 
-               <div>
-                 <button className='dropdown dropdown-content' onClick={() => setFont('Monaco')}>
-                   Monaco
-                  </button>
-                 <button className='dropdown dropdown-content' onClick={() => setFont('Menlo')}>
-                    Menlo
-                 </button>
-                 <button className='dropdown dropdown-content' onClick={() => setFont('Consolas')}>
-                    Consolas
-                 </button>
-                 <button className='dropdown dropdown-content' onClick={() => setFont('Droid Sans Mono')}>
-                   Droid Sans Mono
-                 </button>
-               </div>      
-            }
-
-
-            
+          {open && <DropDownPortion/>}
+     
         </div>
     )
 }

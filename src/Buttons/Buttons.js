@@ -11,7 +11,7 @@ import {AiFillCaretDown} from 'react-icons/ai'
 const Buttons = () => {
     return (
       <Navbar>
-        <NavItem icon={<AiFillCaretDown>Font</AiFillCaretDown>}/>
+        <NavItem icon={<AiFillCaretDown/>}/>
       </Navbar>
     )
 }
