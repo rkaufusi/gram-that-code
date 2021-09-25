@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+import BackgroundDropDown from './Buttons/BackgroundDropDown';
+import FontDropDown from './Buttons/FontDropDown';
+import LanguageDropDown from './Buttons/LanguageDropDown';
 
 const Navbar = () => {
     //const [click, setClick] = useState(false);
@@ -8,43 +11,46 @@ const Navbar = () => {
     const [downloadDropDown, setDownloadDropDown] = useState(false);
 
     const onMouseEnter = (name) => {
-        /*if(name === 'background') setDropDown(true);*/
+        if(name === 'background') setDropDown(true);
         if(name === 'font') setFontDropDown(true);
         if(name === 'language') setLanguageDropDown(true);
         if(name === 'download') setDownloadDropDown(true);
     }
 
     const onMouseLeave = () => {
- 
-        console.log('false');
+        setDropDown(false);
+        setFontDropDown(false);
+        setLanguageDropDown(false);
+        setDownloadDropDown(false);
     }
+    console.log(dropdown)
 
     return (
         <div>
           <nav>
-          <li onMouseEnter={() => onMouseEnter('background')} onMouseLeave={onMouseLeave}>
+          <li onMouseEnter={() => onMouseEnter('background')} onMouseLeave={() => onMouseLeave()}>
             <button>
               Background
             </button>
-            {dropdown && /*<ColorDropdown/>*/ console.log("BackgroundDropDown")}
+            {dropdown && <BackgroundDropDown/>}
           </li>
-          <li onMouseEnter={() => onMouseEnter('font')} onMouseLeave={onMouseLeave}>
+          <li onMouseEnter={() => onMouseEnter('font')} onMouseLeave={() => onMouseLeave()}>
             <button>
               Font
             </button>
-            {fontDropDown && /*<ColorDropdown/>*/ console.log("FontDropDown")}
+            {fontDropDown && <FontDropDown/>}
           </li>
-          <li onMouseEnter={() => onMouseEnter('language')} onMouseLeave={onMouseLeave}>
+          <li onMouseEnter={() => onMouseEnter('language')} onMouseLeave={() => onMouseLeave()}>
             <button>
               Language
           </button>
-            {languageDropDown && /*<ColorDropdown/>*/ console.log("LanguageDropDown")}
+            {languageDropDown && <LanguageDropDown/>}
           </li>
-          <li onMouseEnter={() => onMouseEnter('download')} onMouseLeave={onMouseLeave}>
+          <li onMouseEnter={() => onMouseEnter('download')} onMouseLeave={() => onMouseLeave()}>
             <button>
               Download
             </button>
-            {downloadDropDown && /*<ColorDropdown/>*/ console.log("DownloadDropDown")}
+            {downloadDropDown && /*dropdown needed?*/ console.log('download')}
           </li>
 
           </nav>   
