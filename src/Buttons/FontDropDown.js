@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import fonts from '../fonts.js'
 
 const FontDropDown = () => {
     const [font, setFont] = useState();
@@ -13,7 +14,7 @@ const FontDropDown = () => {
         return (
             <>
               <ul>
-              {fontArray.map((val) => {
+              {fonts.map((val) => {
                   return (
                       <li>
                         <button onClick={() => setFont(val.name)}>
