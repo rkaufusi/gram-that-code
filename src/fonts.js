@@ -1,8 +1,12 @@
 import React from 'react'
 
 const fonts = [
-        {name: 'Times New Roman'},
-        {name: 'Arial'}
+        {name: 'Monaco'},
+        {name: 'Menlo'},
+        {name: 'Consolas'},
+        {name: 'Droid Sans Mono'}
 ]
 
 export default fonts
+
+

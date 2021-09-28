@@ -9,15 +9,13 @@ const BackgroundDropDown = () => {
     ];
 
     const selectUserColor = (userColor) => {
-    
         if(color.length < 2){
             setColor([...color, userColor]);
         }
         else {
           let temp = color[1];
           setColor([temp, userColor]);
-        }
-        
+        } 
       }
 
     console.log(color);
