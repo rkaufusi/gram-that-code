@@ -40,12 +40,13 @@ const Navbar = () => {
             </button>
             {fontDropDown && <FontDropDown/>}
           </li>
-          <li onMouseEnter={() => onMouseEnter('language')} onMouseLeave={() => onMouseLeave()}>
-            <button>
-              Language
-          </button>
-            {languageDropDown && <LanguageDropDown/>}
-          </li>
+          <select>
+          <option>Javascript</option>
+          <option>Java</option>
+          <option>Typescript</option>
+          <option>Python</option>
+        </select>
+     
           <li onMouseEnter={() => onMouseEnter('download')} onMouseLeave={() => onMouseLeave()}>
             <button>
               Download

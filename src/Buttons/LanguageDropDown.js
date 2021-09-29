@@ -1,6 +1,12 @@
 import React, {useState} from 'react'
 
 const LanguageDropDown = () => {
+
+  /*                      <li>
+<button onClick={() => setLanguage(val.name)}>
+  {val.name}
+</button>
+</li> */
     const [language, setLanguage] = useState();
 
     const languageArray = [
@@ -12,19 +18,16 @@ const LanguageDropDown = () => {
 
         return (
             <>
-              <ul>
-              {languageArray.map((val) => {
-                  return (
-                      <li>
-                        <button onClick={() => setLanguage(val.name)}>
-                          {val.name}
-                        </button>
-                      </li>
-                  )
-              })}
-              </ul>    
+                    <select>
+                      <option>Javascript</option>
+                      <option>Java</option>
+                      <option>Typescript</option>
+                      <option>Python</option>
+                    </select>
             </>
         )
     };
 
 export default LanguageDropDown
+
+
