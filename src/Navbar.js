@@ -9,6 +9,8 @@ const Navbar = () => {
     const [fontDropDown, setFontDropDown] = useState(false);
     const [languageDropDown, setLanguageDropDown] = useState(false);
     const [downloadDropDown, setDownloadDropDown] = useState(false);
+    const [font, setFont] = useState('');
+    const [language, setLanguage] = useState('');
 
     const onMouseEnter = (name) => {
         if(name === 'background') setDropDown(true);
@@ -17,13 +19,19 @@ const Navbar = () => {
         if(name === 'download') setDownloadDropDown(true);
     }
 
+    const changeFont = (event) => {
+      setFont(event.target.value);
+    }
+    const changeLanguage = (event) => {
+      setLanguage(event.target.value);
+    }
+
     const onMouseLeave = () => {
         setDropDown(false);
         setFontDropDown(false);
         setLanguageDropDown(false);
         setDownloadDropDown(false);
     }
-    console.log(dropdown)
 
     return (
         <div>
@@ -34,18 +42,20 @@ const Navbar = () => {
             </button>
             {dropdown && <BackgroundDropDown/>}
           </li>
-          <li onMouseEnter={() => onMouseEnter('font')} onMouseLeave={() => onMouseLeave()}>
-            <button>
-              Font
-            </button>
-            {fontDropDown && <FontDropDown/>}
-          </li>
-          <select>
-          <option>Javascript</option>
-          <option>Java</option>
-          <option>Typescript</option>
-          <option>Python</option>
-        </select>
+          <select onChange={changeFont}>
+          <option>Font</option>
+            <option>Monaco</option>
+            <option>Menlo</option>
+            <option>Consolas</option>
+            <option>Droid Sans Mono</option>
+          </select>
+          <select onChange={changeLanguage}>
+            <option>Language</option>
+            <option>Javascript</option>
+            <option>Java</option>
+            <option>Typescript</option>
+            <option>Python</option>
+          </select>
      
           <li onMouseEnter={() => onMouseEnter('download')} onMouseLeave={() => onMouseLeave()}>
             <button>
