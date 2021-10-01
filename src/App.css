@@ -49,3 +49,27 @@
     align-items: center;
     text-align: center;
 }
+
+.user-text-area {
+  width: 550px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px #000;
+  border: 1px solid transparent;
+}
+.menlo {
+  font-family: "Menlo", Courier, monospace;
+}
+.times {
+  font-family: Times,serif;
+}
+.color {
+  color: red;
+}
+
+
+.background {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue; 
+}

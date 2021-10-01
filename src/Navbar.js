@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import BackgroundDropDown from './Buttons/BackgroundDropDown';
 import FontDropDown from './Buttons/FontDropDown';
 import LanguageDropDown from './Buttons/LanguageDropDown';
+import InputArea from './InputArea';
 
 const Navbar = () => {
-    //const [click, setClick] = useState(false);
     const [dropdown, setDropDown] = useState(false);
     const [fontDropDown, setFontDropDown] = useState(false);
     const [languageDropDown, setLanguageDropDown] = useState(false);
@@ -22,6 +22,7 @@ const Navbar = () => {
     const changeFont = (event) => {
       setFont(event.target.value);
     }
+
     const changeLanguage = (event) => {
       setLanguage(event.target.value);
     }
@@ -64,7 +65,10 @@ const Navbar = () => {
             {downloadDropDown && /*dropdown needed?*/ console.log('download')}
           </li>
 
-          </nav>   
+          </nav>
+          <div className='color'>
+            <InputArea value='Monaco'/>   
+          </div>
         </div>
     )
 }
