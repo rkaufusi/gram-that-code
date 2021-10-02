@@ -57,12 +57,22 @@
   box-shadow: 0 0 0 3px #000;
   border: 1px solid transparent;
 }
-.menlo {
+.Menlo {
   font-family: "Menlo", Courier, monospace;
 }
-.times {
+.Font {
   font-family: Times,serif;
 }
+.Monaco {
+  font-family: monaco, Consolas, Lucida Console, monospace;
+}
+.Droid-Sans-Mono {
+  font-family: monaco, Consolas, Lucida Console, monospace;
+}
+.Consolas {
+  font-family: Consolas, Lucida Console, monospace;
+}
+
 .color {
   color: red;
 }

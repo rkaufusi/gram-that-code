@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import BackgroundDropDown from './Buttons/BackgroundDropDown';
 import FontDropDown from './Buttons/FontDropDown';
 import LanguageDropDown from './Buttons/LanguageDropDown';
@@ -33,6 +33,9 @@ const Navbar = () => {
         setLanguageDropDown(false);
         setDownloadDropDown(false);
     }
+    useEffect(() => {
+      console.log(font)
+    }, [font]);
 
     return (
         <div>
@@ -67,7 +70,7 @@ const Navbar = () => {
 
           </nav>
           <div className='color'>
-            <InputArea value='Monaco'/>   
+            <InputArea value={font}/>   
           </div>
         </div>
     )

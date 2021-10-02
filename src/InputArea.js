@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 
 
 const InputArea = (props) => {
@@ -9,20 +9,27 @@ const InputArea = (props) => {
     const [temp, setTemp] = useState(false);
     //setFont(userFont)
 
-
-
+   const userFont = () => {
+       if(font === 'Menlo'){
+           return 'Menlo';
+       } else if (font === 'Monaco'){
+           return 'Monaco'
+       }
+   }
 
     const handleChange = event => {
         setText([event.target.value]);
-        console.log('handle change font'+font);
-        event.preventDefault();
-        console.log(text)
+        console.log('handle change font ' + font);
+        //event.preventDefault();
+        console.log(text);
     }
 
-    /*<div className={`box ${isWarning === true && "warning"}`} */
+    /*<div className={`box ${isWarning === true && "warning"}`} 
+    {font === 'Monaco' ? `user-text-area ${font}` : 'user-text-area'}
+    */
     return (
         <div>
-            <textarea className={font === 'Monaco' ? 'user-text-area menlo' : 'user-text-area'} value={text} onChange={handleChange}>
+            <textarea className={() => userFont()} value={text} onChange={handleChange}>
             
             </textarea>
 
