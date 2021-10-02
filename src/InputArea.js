@@ -17,6 +17,8 @@ const InputArea = (props) => {
        }
    }
 
+   console.log('props ' + props.value)
+
     const handleChange = event => {
         setText([event.target.value]);
         console.log('handle change font ' + font);
@@ -29,7 +31,7 @@ const InputArea = (props) => {
     */
     return (
         <div>
-            <textarea className={() => userFont()} value={text} onChange={handleChange}>
+            <textarea className={props.value} value={text} onChange={handleChange}>
             
             </textarea>
 
