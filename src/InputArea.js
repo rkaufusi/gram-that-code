@@ -9,21 +9,15 @@ const InputArea = (props) => {
     const [temp, setTemp] = useState(false);
     //setFont(userFont)
 
-   const userFont = () => {
-       if(font === 'Menlo'){
-           return 'Menlo';
-       } else if (font === 'Monaco'){
-           return 'Monaco'
-       }
-   }
 
-   console.log('props ' + props.value)
+
+   console.log('props ' + props.value.replace(/\s/g, '-'))
 
     const handleChange = event => {
         setText([event.target.value]);
         console.log('handle change font ' + font);
         //event.preventDefault();
-        console.log(text);
+        //console.log(text);
     }
 
     /*<div className={`box ${isWarning === true && "warning"}`} 
@@ -31,7 +25,7 @@ const InputArea = (props) => {
     */
     return (
         <div>
-            <textarea className={props.value} value={text} onChange={handleChange}>
+            <textarea className={'background ' + props.value.replace(/\s/g, '-')} value={text} onChange={handleChange}>
             
             </textarea>
 
