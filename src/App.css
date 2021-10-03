@@ -57,29 +57,29 @@
   box-shadow: 0 0 0 3px #000;
   border: 1px solid transparent;
 }
+
 .Menlo {
-  font-family: "Menlo", Courier, monospace;
+  font-family: "menlo", monospace;
 }
 .Font {
-  font-family: Times,serif;
+  font-family: "Courier New", monospace;
 }
 .Monaco {
-  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-family: "monaco", Consolas, Lucida Console, monospace;;
 }
 .Droid-Sans-Mono {
-  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-family: Arial, sans-serif;
 }
 .Consolas {
-  font-family: Consolas, Lucida Console, monospace;
+  font-family: Georgia, serif;
 }
 
 .color {
   color: red;
 }
 
-
 .background {
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  height: 200px;
   border: 1px solid blue; 
 }
