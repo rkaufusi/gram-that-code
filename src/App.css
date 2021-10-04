@@ -58,20 +58,21 @@
   border: 1px solid transparent;
 }
 
-.Menlo {
-  font-family: "menlo", monospace;
-}
+
 .Font {
   font-family: "Courier New", monospace;
 }
 .Monaco {
   font-family: "monaco", Consolas, Lucida Console, monospace;;
 }
-.Droid-Sans-Mono {
+.Menlo {
+  font-family: "menlo", monospace;
+}
+.Arial {
   font-family: Arial, sans-serif;
 }
-.Consolas {
-  font-family: Georgia, serif;
+.Lucida-Console {
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
 .color {

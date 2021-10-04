@@ -50,8 +50,8 @@ const Navbar = () => {
           <option>Font</option>
             <option>Monaco</option>
             <option>Menlo</option>
-            <option>Consolas</option>
-            <option>Droid Sans Mono</option>
+            <option>Arial</option>
+            <option>Lucida Console</option>
           </select>
           <select onChange={changeLanguage}>
             <option>Language</option>
