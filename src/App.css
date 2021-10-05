@@ -58,6 +58,10 @@
   border: 1px solid transparent;
 }
 
+.nav {
+  display: inline;
+}
+
 
 .Font {
   font-family: "Courier New", monospace;
@@ -72,15 +76,38 @@
   font-family: Arial, sans-serif;
 }
 .Lucida-Console {
-  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+  font-family: Lucida Console,Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
 }
 
 .color {
   color: red;
 }
+.text-container {
+  width: 500px;
+  height: 400px;
+  margin: auto;
+  background-image: linear-gradient(to bottom right, red , yellow);
+}
+
+.red-blue {
+  background-image: linear-gradient(to bottom right, red , rgb(13, 0, 255));
+}
+.green-yellow {
+  background-image: linear-gradient(to bottom right, rgb(54, 235, 9) , yellow);
+}
+.orange-purple {
+  background-image: linear-gradient(to bottom right, rgb(255, 145, 0) , rgb(183, 0, 255));
+}
+.blue-green {
+  background-image: linear-gradient(to bottom right, rgb(4, 0, 255) , rgb(72, 255, 0));
+}
 
 .background {
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 400px;
   height: 200px;
-  border: 1px solid blue; 
+  background-color: #404f49;
+  opacity: 90%;
+
 }

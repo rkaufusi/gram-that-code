@@ -5,18 +5,17 @@ import LanguageDropDown from './Buttons/LanguageDropDown';
 import InputArea from './InputArea';
 
 const Navbar = () => {
-    const [dropdown, setDropDown] = useState(false);
+    const [dropdown, setDropdown] = useState(false);
     const [fontDropDown, setFontDropDown] = useState(false);
     const [languageDropDown, setLanguageDropDown] = useState(false);
     const [downloadDropDown, setDownloadDropDown] = useState(false);
     const [font, setFont] = useState('');
     const [language, setLanguage] = useState('');
+    const [color, setColor] = useState('');
+    const [download, setDownload] = useState('');
 
-    const onMouseEnter = (name) => {
-        if(name === 'background') setDropDown(true);
-        if(name === 'font') setFontDropDown(true);
-        if(name === 'language') setLanguageDropDown(true);
-        if(name === 'download') setDownloadDropDown(true);
+    const changeColor = (event) => {
+      setColor(event.target.value);
     }
 
     const changeFont = (event) => {
@@ -27,49 +26,54 @@ const Navbar = () => {
       setLanguage(event.target.value);
     }
 
-    const onMouseLeave = () => {
-        setDropDown(false);
-        setFontDropDown(false);
-        setLanguageDropDown(false);
-        setDownloadDropDown(false);
+    const changeDownload = (event) => {
+      setDownload(event.target.value);
     }
-    useEffect(() => {
-      console.log(font)
-    }, [font]);
+
+
+
 
     return (
         <div>
           <nav>
-          <li onMouseEnter={() => onMouseEnter('background')} onMouseLeave={() => onMouseLeave()}>
-            <button>
-              Background
-            </button>
-            {dropdown && <BackgroundDropDown/>}
-          </li>
-          <select onChange={changeFont}>
-          <option>Font</option>
-            <option>Monaco</option>
-            <option>Menlo</option>
-            <option>Arial</option>
-            <option>Lucida Console</option>
-          </select>
-          <select onChange={changeLanguage}>
-            <option>Language</option>
-            <option>Javascript</option>
-            <option>Java</option>
-            <option>Typescript</option>
-            <option>Python</option>
-          </select>
-     
-          <li onMouseEnter={() => onMouseEnter('download')} onMouseLeave={() => onMouseLeave()}>
-            <button>
-              Download
-            </button>
-            {downloadDropDown && /*dropdown needed?*/ console.log('download')}
-          </li>
-
+            <ul>
+              <li className='nav'>
+                <select onChange={changeColor}>
+                  <option>Color</option>
+                  <option>Red-Blue</option>
+                  <option>Green-Yellow</option>
+                  <option>Orange-Purple</option>
+                  <option>Blue-Green</option>
+                </select>
+              </li>
+              <li className='nav'>
+                <select onChange={changeFont}>
+                  <option>Font</option>
+                  <option>Monaco</option>
+                  <option>Menlo</option>
+                  <option>Arial</option>
+                  <option>Lucida Console</option>
+                </select>
+              </li>
+              <li className='nav'>
+                <select onChange={changeLanguage}>
+                  <option>Language</option>
+                  <option>Javascript</option>
+                  <option>Java</option>
+                  <option>Typescript</option>
+                  <option>Python</option>
+                </select>
+              </li>
+              <li className='nav'>
+                <select onChange={changeDownload}>
+                  <option>Download</option>
+                  <option>JPEG</option>
+                  <option>Other way</option>
+                </select>
+              </li>
+            </ul>
           </nav>
-          <div className='color'>
+          <div className={`text-container ${color.toLowerCase()}`}>
             <InputArea value={font}/>   
           </div>
         </div>
