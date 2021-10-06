@@ -73,9 +73,9 @@ const Navbar = () => {
               </li>
             </ul>
           </nav>
-          <div className={`text-container ${color.toLowerCase()}`}>
-            <InputArea value={font}/>   
-          </div>
+        
+            <InputArea value={font} colors={color} />   
+          
         </div>
     )
 }
