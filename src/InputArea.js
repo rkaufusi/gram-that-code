@@ -43,38 +43,47 @@ const InputArea = (props) => {
   } */
   let heightVal = 200;
   let heightArr = heightVal + 'px';
+  let count = 0;
   console.log('heightVal ' + heightVal, 'heightArr ' + heightArr);
-
+/*
 const myStyle = {
   marginTop: '5%',
   width: '400px',
   height: heightArr,
   backgroundColor: '#404f49',
   opacity: '90%'
-};
+};*/
+const [myHeight, setMyHeight] = useState(200);
+const [numberOfLines, setNumberOfLines] = useState(0);
+const [nextLine, setNextLine] = useState(6);
 
-console.log('myStyle.height ' + myStyle.height)
-
-
-
-let numLinesVal = 8;
+/*
 let numLines = text.join('').split(/\r\n|\r|\n/).length;
+setNumberOfLines(numLines);
+console.log('number of lines ' + numberOfLines); */
 
-if(numLines >= numLinesVal) {
-  console.log('numlines > 8');
-  let oldHeight = parseInt(myStyle.height.slice(0, -2));
-  let newHeight = oldHeight + 15;
-  //heightVal = newheight;
-  myStyle.height = newHeight + 'px';
-  numLinesVal++;
-}
-  console.log('numLines ' + text.join('').split(/\r\n|\r|\n/).length);
+useEffect(() => {
+  let numLines = text.join('').split(/\r\n|\r|\n/).length;
+  setNumberOfLines(numLines);
+  console.log('number of lines ' + numberOfLines);
+
+  if(numberOfLines === nextLine) {
+    console.log('numberOfLines === nextLine' + numberOfLines + ' ' + nextLine);
+    setMyHeight(myHeight + 15);
+    setNextLine(nextLine + 1);
+    
+  }
+  console.log('next line ' + nextLine)
+}, [text]);
+
+  //console.log('numLines ' + text.join('').split(/\r\n|\r|\n/).length);
 
 
 // className={'background ' + props.value.replace(/\s/g, '-')}
 
     return (
-           <textarea id='text-area' style={myStyle} className={'background ' + props.value.replace(/\s/g, '-')} value={text} onChange={handleChange} ref={listRef}>
+  
+           <textarea id='text-area' style={{height: myHeight + 'px'}} className={'background ' + props.value.replace(/\s/g, '-')} value={text} onChange={handleChange} ref={listRef}>
             
             </textarea>
 
