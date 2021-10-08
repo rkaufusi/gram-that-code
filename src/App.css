@@ -83,9 +83,10 @@
   color: red;
 }
 .text-container {
+  margin: auto;
   width: 500px;
   height: 400px;
-  margin: auto;
+  
   background-image: linear-gradient(to bottom right, red , yellow);
 }
 

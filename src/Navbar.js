@@ -1,14 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import BackgroundDropDown from './Buttons/BackgroundDropDown';
-import FontDropDown from './Buttons/FontDropDown';
-import LanguageDropDown from './Buttons/LanguageDropDown';
+
 import InputArea from './InputArea';
 
 const Navbar = () => {
-    const [dropdown, setDropdown] = useState(false);
-    const [fontDropDown, setFontDropDown] = useState(false);
-    const [languageDropDown, setLanguageDropDown] = useState(false);
-    const [downloadDropDown, setDownloadDropDown] = useState(false);
     const [font, setFont] = useState('');
     const [language, setLanguage] = useState('');
     const [color, setColor] = useState('');
@@ -67,14 +61,14 @@ const Navbar = () => {
               <li className='nav'>
                 <select onChange={changeDownload}>
                   <option>Download</option>
-                  <option>JPEG</option>
+                  <option download>JPEG</option>
                   <option>Other way</option>
                 </select>
               </li>
             </ul>
           </nav>
         
-            <InputArea value={font} colors={color} />   
+            <InputArea values={font} colors={color} />   
           
         </div>
     )
