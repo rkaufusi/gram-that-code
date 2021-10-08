@@ -6,7 +6,8 @@ const Navbar = () => {
     const [font, setFont] = useState('');
     const [language, setLanguage] = useState('');
     const [color, setColor] = useState('');
-    const [download, setDownload] = useState('');
+    const [download, setDownload] = useState(false);
+    const [downloadString, setDownloadString] = useState('Download');
 
     const changeColor = (event) => {
       setColor(event.target.value);
@@ -20,12 +21,35 @@ const Navbar = () => {
       setLanguage(event.target.value);
     }
 
-    const changeDownload = (event) => {
-      setDownload(event.target.value);
+    const changeDownload = () => {
+      setDownload(true);
     }
 
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setDownload(false);
+      }, 2500);
+      return () => clearTimeout(timer);
+    }, [download]);
 
+    const SelectedOption = () => {
+      if(!download) {
+        return (                
+          <> 
+            <option selected='selected'>Download</option>
+            <option>PNG</option>
+          </>
+          )
+        } else {
+          return (
+            <>
+            <option selected='selected'>PNG</option>
+            <option>Download</option>
+            </>
+          )
 
+        }
+        }
 
     return (
         <div>
@@ -59,16 +83,14 @@ const Navbar = () => {
                 </select>
               </li>
               <li className='nav'>
-                <select onChange={changeDownload}>
-                  <option>Download</option>
-                  <option download>JPEG</option>
-                  <option>Other way</option>
+                <select onChange={changeDownload} value={'here'}>
+                  <SelectedOption/>
                 </select>
               </li>
             </ul>
           </nav>
         
-            <InputArea values={font} colors={color} />   
+            <InputArea values={font} colors={color} downloadUsed={download}/>   
           
         </div>
     )
