@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import React , {useState, useRef, useEffect, useCallback} from 'react';
+import React , {useState, useRef, useEffect} from 'react';
 import html2canvas from 'html2canvas';
 
 const InputArea = ({values, colors, downloadUsed}) => {
