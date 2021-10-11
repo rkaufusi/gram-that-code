@@ -1,12 +1,20 @@
 import React , {useState, useRef, useEffect} from 'react';
 import html2canvas from 'html2canvas';
+import Prism from 'prismjs';
+import "prismjs/themes/prism-tomorrow.css";
 
-const InputArea = ({values, colors, downloadUsed}) => {
+const InputArea = ({values, colors, downloadUsed, language}) => {
   const [text, setText] = useState([]);
   const [myHeight, setMyHeight] = useState(200);
   const [numberOfLines, setNumberOfLines] = useState(0);
   const [nextLine, setNextLine] = useState(6);
   const [backgroundheight, setBackgroundheight] = useState(300);
+
+  console.log(language)
+
+  if(language === 'Language') {
+    language = 'javascript';
+  }
 
   const handleChange = event => {
     setText([event.target.value]);
@@ -59,17 +67,27 @@ const InputArea = ({values, colors, downloadUsed}) => {
       downloadPic();
     }
 
+    useEffect(() => {
+      Prism.highlightAll();
+    }, []);
+  
+//{`language-${language}` + ` background ` + values.replace(/\s/g, '-')}
     return (
-        <>
+        <React.Fragment>
           <div id='download' style={{height: backgroundheight + 'px', transition: 'height .3s'}} className={`text-container ${colors.toLowerCase()}`}>
+          
             <textarea     
             id='text-area' 
             style={{height: myHeight + 'px', transition: 'height .2s'}} 
             className={'background ' + values.replace(/\s/g, '-')}  
             value={text} onChange={handleChange} 
             spellcheck='false'/>
+          
           </div>
-        </>
+          <pre >
+            <code className={`language-javascript`}>{text}</code>
+          </pre>
+        </React.Fragment>
     )
 }
 

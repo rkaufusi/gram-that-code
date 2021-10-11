@@ -1,13 +1,19 @@
-import React, {useState, useEffect} from 'react'
-
+import React, {useState, useEffect} from 'react';
+import SelectedOption from './SelectedOption.js';
 import InputArea from './InputArea';
+import Prism from 'prismjs';
+import "prismjs/themes/prism-tomorrow.css";
 
 const Navbar = () => {
     const [font, setFont] = useState('');
     const [language, setLanguage] = useState('');
     const [color, setColor] = useState('');
     const [download, setDownload] = useState(false);
-    const [downloadString, setDownloadString] = useState('Download');
+
+    useEffect(() => {
+      Prism.highlightAll();
+    }, []);
+  
 
     const changeColor = (event) => {
       setColor(event.target.value);
@@ -31,25 +37,6 @@ const Navbar = () => {
       }, 2500);
       return () => clearTimeout(timer);
     }, [download]);
-
-    const SelectedOption = () => {
-      if(!download) {
-        return (                
-          <> 
-            <option selected='selected'>Download</option>
-            <option>PNG</option>
-          </>
-          )
-        } else {
-          return (
-            <>
-            <option selected='selected'>PNG</option>
-            <option>Download</option>
-            </>
-          )
-
-        }
-        }
 
     return (
         <div>
@@ -84,13 +71,13 @@ const Navbar = () => {
               </li>
               <li className='nav'>
                 <select onChange={changeDownload} value={'here'}>
-                  <SelectedOption/>
+                  <SelectedOption value={download}/>
                 </select>
               </li>
             </ul>
           </nav>
         
-            <InputArea values={font} colors={color} downloadUsed={download}/>   
+            <InputArea values={font} colors={color} downloadUsed={download} language={language}/>   
           
         </div>
     )
