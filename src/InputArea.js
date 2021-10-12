@@ -4,24 +4,25 @@ import Prism from 'prismjs';
 import "prismjs/themes/prism-tomorrow.css";
 
 const InputArea = ({values, colors, downloadUsed, language}) => {
-  const [text, setText] = useState([]);
+  const [text, setText] = useState('');
   const [myHeight, setMyHeight] = useState(200);
   const [numberOfLines, setNumberOfLines] = useState(0);
   const [nextLine, setNextLine] = useState(6);
   const [backgroundheight, setBackgroundheight] = useState(300);
+  const [change, setChange] = useState(0);
 
   console.log(language)
 
-  if(language === 'Language') {
-    language = 'javascript';
-  }
 
   const handleChange = event => {
-    setText([event.target.value]);
+    change < 20 ? setChange(change + 1) : setChange(0);
+    setText(event.target.value)
+    console.log(event.target.value);
   }
 
+
   useEffect(() => {
-    let numLines = text.join('').split(/\r\n|\r|\n/).length;
+    let numLines = text.split(/\r\n|\r|\n/).length;
     setNumberOfLines(numLines);
     console.log('number of lines ' + numberOfLines);
 
@@ -69,7 +70,16 @@ const InputArea = ({values, colors, downloadUsed, language}) => {
 
     useEffect(() => {
       Prism.highlightAll();
-    }, []);
+    }, [change]);
+/*
+    function update(userText) {
+      let result_element = document.querySelector("#myCode");
+      // Update code
+      result_element.innerText = userText;
+      // Syntax Highlight
+      Prism.highlightElement(result_element);
+    }*/
+
   
 //{`language-${language}` + ` background ` + values.replace(/\s/g, '-')}
     return (
@@ -79,13 +89,20 @@ const InputArea = ({values, colors, downloadUsed, language}) => {
             <textarea     
             id='text-area' 
             style={{height: myHeight + 'px', transition: 'height .2s'}} 
-            className={'background ' + values.replace(/\s/g, '-')}  
-            value={text} onChange={handleChange} 
+            className={'background ' + values.replace(/\s/g, '-')} 
+            
+            value={text} onChange={handleChange}
             spellcheck='false'/>
           
           </div>
-          <pre >
-            <code className={`language-javascript`}>{text}</code>
+            <pre 
+              id='highlighting' 
+              aria-hidden='true' 
+              style={{height: myHeight - 30 + 'px', transition: 'height .2s'}} 
+            >
+            <code id='myCode'  className={`language-javascript`}>
+            {text}
+            </code>
           </pre>
         </React.Fragment>
     )
