@@ -66,15 +66,19 @@
 .Font {
   font-family: "Courier New", monospace;
 }
+
 .Monaco {
   font-family: "monaco", Consolas, Lucida Console, monospace;;
 }
+
 .Menlo {
   font-family: "menlo", monospace;
 }
+
 .Arial {
   font-family: Arial, sans-serif;
 }
+
 .Lucida-Console {
   font-family: Lucida Console,Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
 }
@@ -83,54 +87,82 @@
   color: red;
 }
 .text-container {
+  position: relative;
   margin: auto;
   width: 500px;
   height: 400px;
-  
   background-image: linear-gradient(to bottom right, red , yellow);
 }
 
 .red-blue {
   background-image: linear-gradient(to bottom right, red , rgb(13, 0, 255));
 }
+
 .green-yellow {
   background-image: linear-gradient(to bottom right, rgb(54, 235, 9) , yellow);
 }
+
 .orange-purple {
   background-image: linear-gradient(to bottom right, rgb(255, 145, 0) , rgb(183, 0, 255));
 }
+
 .blue-green {
   background-image: linear-gradient(to bottom right, rgb(4, 0, 255) , rgb(72, 255, 0));
 }
+
 #myCode {
   z-index: 1;
   tab-size: 2;
+
 }
+
+.form-control:focus{
+
+}
+
 #text-area {
+  position: absolute;
+  top: 10%;
+  left: 8%;
   color: transparent;
   background-color: transparent;
   caret-color: white;
   z-index: 1;
   border: none;
+  width: 403px;
+  top: 10%;
+  left: 10%;
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  
 }
+
+
 
 #highlighting {
   z-index: 0;
-  background-color: #404f49;;
+  background-color: #404f49;
+  width: 380px;
+  opacity: 90%;
+  top: 4%;
+  left: 7%;
 }
 
 #text-area, #highlighting {
+  tab-size: 2;
   position: absolute;
-  top: 100px;
-  left: 100px;
+  font-size: 11pt;
+  font-family: monospace;
+  line-height: 16pt;
   overflow: auto;
   white-space: nowrap;
   tab-size: 2;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  width: 400px;
-  /*height: 200px;*/
-  opacity: 90%;
+  
   resize: none;
-
 }
+
+
+
+
+

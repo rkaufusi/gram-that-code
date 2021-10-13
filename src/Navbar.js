@@ -3,6 +3,7 @@ import SelectedOption from './SelectedOption.js';
 import InputArea from './InputArea';
 import Prism from 'prismjs';
 import "prismjs/themes/prism-tomorrow.css";
+import 'prismjs/components/prism-python';
 
 const Navbar = () => {
     const [font, setFont] = useState('');
@@ -13,7 +14,7 @@ const Navbar = () => {
     useEffect(() => {
       Prism.highlightAll();
     }, []);
-  
+    
 
     const changeColor = (event) => {
       setColor(event.target.value);
