@@ -1,6 +1,4 @@
 import './App.css';
-
-import InputArea from './InputArea.js';
 import Navbar from './Navbar.js';
 
 
@@ -9,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Gram that Code!</h1>
       <Navbar/>
-      
+      <p>Source code <a href='https://github.com/rkaufusi/gram-that-code' target="_blank">Github</a></p>
 
     </div>
   );
