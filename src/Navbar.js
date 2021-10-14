@@ -1,28 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import SelectedOption from './SelectedOption.js';
 import InputArea from './InputArea';
-import Prism from 'prismjs';
-import "prismjs/themes/prism-tomorrow.css";
-import 'prismjs/components/prism-python';
 
 const Navbar = () => {
-    const [font, setFont] = useState('');
+    //const [font, setFont] = useState('');
     const [language, setLanguage] = useState('');
     const [color, setColor] = useState('');
     const [download, setDownload] = useState(false);
-
-    useEffect(() => {
-      Prism.highlightAll();
-    }, []);
     
 
     const changeColor = (event) => {
       setColor(event.target.value);
     }
-
+/*
     const changeFont = (event) => {
       setFont(event.target.value);
-    }
+    }*/
 
     const changeLanguage = (event) => {
       setLanguage(event.target.value);
@@ -85,7 +78,7 @@ const Navbar = () => {
             </ul>
           </nav>
         
-            <InputArea values={font} colors={color} downloadUsed={download} language={language}/>   
+            <InputArea colors={color} downloadUsed={download} language={language}/>   
           
         </div>
     )
