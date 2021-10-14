@@ -1,23 +1,29 @@
-import React , {useState, useRef, useEffect} from 'react';
+import React , {useState, useEffect} from 'react';
 import html2canvas from 'html2canvas';
 import Prism from 'prismjs';
 import "prismjs/themes/prism-tomorrow.css";
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-go';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-csharp';
+import 'prismjs/components/prism-cpp';
+
 
 const InputArea = ({values, colors, downloadUsed, language}) => {
   const [text, setText] = useState('');
-  const [myHeight, setMyHeight] = useState(200);
+  const [myHeight, setMyHeight] = useState(230);
   const [numberOfLines, setNumberOfLines] = useState(0);
-  const [nextLine, setNextLine] = useState(6);
+  const [nextLine, setNextLine] = useState(10);
   const [backgroundheight, setBackgroundheight] = useState(300);
   const [change, setChange] = useState(0);
 
 
   useEffect(() => {
     Prism.highlightAll();
-  },[language]);
+  },[language, change]);
 
 
   const handleChange = event => {
@@ -29,22 +35,16 @@ const InputArea = ({values, colors, downloadUsed, language}) => {
   useEffect(() => {
     let numLines = text.split(/\r\n|\r|\n/).length;
     setNumberOfLines(numLines);
-    //console.log('number of lines ' + numberOfLines);
 
     if(numberOfLines === nextLine) {
-      //console.log('numberOfLines === nextLine' + numberOfLines + ' ' + nextLine);
       setMyHeight(myHeight + 15);
       setBackgroundheight(backgroundheight + 15);
       setNextLine(nextLine + 1);
     }
-    if(text[text.length-1] == "\n") { // If the last character is a newline character
-      text += " "; // Add a placeholder space character to the final line 
-    }
   }, [text]);
 
   const downloadPic = () => {
-    let data = document.getElementById('download')
-
+    let data = document.getElementById('download');
     html2canvas(data).then((canvas)=>{
       let image = canvas.toDataURL('image/png', 1.0);
       return image;
@@ -76,16 +76,12 @@ const InputArea = ({values, colors, downloadUsed, language}) => {
       downloadPic();
     }
 
-    useEffect(() => {
-      Prism.highlightAll();
-    }, [change]);
-
     return (
         <React.Fragment>
         
           <div id='download' style={{height: backgroundheight + 'px', transition: 'height .3s'}} className={`text-container ${colors.toLowerCase()}`}>
 
-            <textarea     
+            <textarea  
             id='text-area' 
             style={{height: myHeight + 'px', transition: 'height .2s'}} 
            /* className={values.replace(/\s/g, '-')}    */       
@@ -98,7 +94,7 @@ const InputArea = ({values, colors, downloadUsed, language}) => {
               aria-hidden='true' 
               style={{height: myHeight - 25 + 'px', transition: 'height .2s'}} 
             >
-            <code id='myCode' className={`${language === 'Language' || language === '' ? 'language-python' : `language-${language.toLowerCase()}`}`}>
+            <code id='myCode' className={`${language === 'Language' || language === '' ? 'language-javascript' : `language-${language.toLowerCase()}`}`}>
             {text}
             </code>
           </pre>

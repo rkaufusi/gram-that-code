@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgb(217, 209, 209);
+  height: 100vh;
 }
 
 .App-header {
@@ -29,39 +31,28 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
-
 }
+
 .dropdown:hover {
   display:block;
   background-color: antiquewhite;
 }
-.line {
-  display: inline;
-}
+
 .work-area {
     width: 80%;
     height: 50vh;
     box-sizing: content-box;
     border: 2px solid rgb(13, 17, 13);
-    
     margin: 20px;
     margin-left: 10%;
     align-items: center;
     text-align: center;
 }
 
-.user-text-area {
-  width: 550px;
-  height: 300px;
-  border-radius: 5px;
-  box-shadow: 0 0 0 3px #000;
-  border: 1px solid transparent;
-}
-
 .nav {
   display: inline;
+  margin: 1%;
 }
-
 
 .Font {
   font-family: "Courier New", monospace;
@@ -95,11 +86,11 @@
 }
 
 .red-blue {
-  background-image: linear-gradient(to bottom right, red , rgb(13, 0, 255));
+  background-image: linear-gradient(to bottom right, rgb(238, 55, 55) , rgb(67, 59, 235));
 }
 
 .green-yellow {
-  background-image: linear-gradient(to bottom right, rgb(54, 235, 9) , yellow);
+  background-image: linear-gradient(to bottom right, rgb(75, 196, 45) , rgb(245, 245, 52));
 }
 
 .orange-purple {
@@ -107,59 +98,64 @@
 }
 
 .blue-green {
-  background-image: linear-gradient(to bottom right, rgb(4, 0, 255) , rgb(72, 255, 0));
+  background-image: linear-gradient(to bottom right, rgb(8, 4, 202) , rgb(48, 160, 4));
 }
 
 #myCode {
   z-index: 1;
-  tab-size: 2;
-
-}
-
-.form-control:focus{
-
 }
 
 #text-area {
   position: absolute;
   top: 10%;
   left: 8%;
-  color: transparent;
   background-color: transparent;
+  color: transparent;
   caret-color: white;
   z-index: 1;
   border: none;
   width: 403px;
-  top: 10%;
-  left: 10%;
+  top: 40px;
+  left: 58px;
   outline:0px !important;
   -webkit-appearance:none;
   box-shadow: none !important;
-  
+  line-height: 15pt;
+  font-size: 10pt;
+  white-space: nowrap; 
+  overflow: auto;
 }
-
-
 
 #highlighting {
   z-index: 0;
   background-color: #404f49;
   width: 380px;
   opacity: 90%;
-  top: 4%;
-  left: 7%;
+  top: 20px;
+  left: 45px;
+  line-height: 10pt;
+  font-size: 10pt;
 }
 
 #text-area, #highlighting {
   tab-size: 2;
   position: absolute;
-  font-size: 11pt;
   font-family: monospace;
-  line-height: 16pt;
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap;
-  tab-size: 2;
-  
   resize: none;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  #text-area {
+    top: 14%;
+    left: 9%;
+  }
+  #highlighting {
+    top: 8%;
+    left: 6%;
+  }
 }
 
 

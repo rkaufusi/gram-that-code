@@ -52,6 +52,7 @@ const Navbar = () => {
                   <option>Blue-Green</option>
                 </select>
               </li>
+              {/* might add change font funtionality later
               <li className='nav'>
                 <select onChange={changeFont}>
                   <option>Font</option>
@@ -61,6 +62,7 @@ const Navbar = () => {
                   <option>Lucida Console</option>
                 </select>
               </li>
+              */}
               <li className='nav'>
                 <select onChange={changeLanguage}>
                   <option>Language</option>
@@ -68,6 +70,11 @@ const Navbar = () => {
                   <option>Java</option>
                   <option>Typescript</option>
                   <option>Python</option>
+                  <option>CSS</option>
+                  <option>GO</option>
+                  <option>C</option>
+                  <option>C##</option>
+                  <option>C++</option>
                 </select>
               </li>
               <li className='nav'>
