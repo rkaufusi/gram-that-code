@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Gram that Code!</h1>
       <Navbar/>
-      <p>Source code <a href='https://github.com/rkaufusi/gram-that-code' target="_blank">Github</a></p>
+      <p>Source code <a href='https://github.com/rkaufusi/gram-that-code' target="_blank" rel="noreferrer">Github</a></p>
 
     </div>
   );
